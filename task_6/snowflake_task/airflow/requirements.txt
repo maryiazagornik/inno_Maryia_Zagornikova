@@ -1,0 +1,5 @@
+apache-airflow-providers-snowflake==5.5.0
+snowflake-connector-python[pandas]==3.7.1
+pandas==2.2.3
+python-dotenv==1.0.1
+ruff==0.8.4
