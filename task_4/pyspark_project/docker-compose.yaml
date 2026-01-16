@@ -1,0 +1,16 @@
+services:
+  spark-job:
+    build: .
+    environment:
+      # Прокидываем креды от БД
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      # Настройки для PySpark внутри контейнера
+      - SPARK_LOCAL_IP=0.0.0.0
+    volumes:
+      # Маппинг кода для разработки
+      - ./:/app
+    extra_hosts:
+      # Это позволяет контейнеру видеть твой localhost
+      - "host.docker.internal:host-gateway"
+    command: python main.py

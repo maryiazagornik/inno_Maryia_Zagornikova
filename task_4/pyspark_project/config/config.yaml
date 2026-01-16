@@ -1,0 +1,14 @@
+app_name: "SakilaAnalytics"
+
+spark:
+  master: "local[*]"
+  log_level: "INFO"
+  # Maven координаты драйвера Postgres
+  jars: "org.postgresql:postgresql:42.2.19" 
+
+database:
+  url: "jdbc:postgresql://host.docker.internal:5432/postgres"
+  driver: "org.postgresql.Driver"
+  # Имена переменных окружения, откуда брать логин/пароль
+  user_env: "DB_USER"
+  password_env: "DB_PASSWORD"
